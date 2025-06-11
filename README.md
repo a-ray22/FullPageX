@@ -5,6 +5,7 @@ A powerful Chrome extension for capturing and editing full-page screenshots with
 ## Features
 
 - Capture full-page screenshots of any webpage
+- Capture portion of the web-page as a recording
 - Advanced image editing capabilities using Fabric.js
 - PDF export functionality
 - Custom cropping and annotation tools
