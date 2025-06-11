@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Capture Tools</title>
+  <style>
+    /* Reset and base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 320px;
+      padding: 15px;
+      margin: 0;
+      background-color: #121212;
+      color: #eee;
+      user-select: none;
+    }
+
+    h3 {
+      margin: 0 0 20px 0;
+      font-weight: 600;
+      font-size: 1.4rem;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 12px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #121212;
+      background: #eee;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    /* Emoji styles for crisp rendering */
+    button span.emoji {
+      font-size: 1.5rem;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+      user-select: none;
+    }
+
+    #progressContainer {
+      width: 100%;
+      background: #eee;
+      border-radius: 5px;
+      height: 10px;
+      margin-top: 15px;
+      display: none;
+      overflow: hidden;
+    }
+
+    #progressBar {
+      width: 0%;
+      height: 100%;
+      background: #90bf6f;
+      border-radius: 5px;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <h3>Capture Tools</h3>
+  <button id="captureBtn">
+    <span class="emoji" aria-label="Camera">📸</span> Full Page Screenshot
+  </button>
+  <button id="startGif">
+    <span class="emoji" aria-label="Film Frames">🎞️</span> Screen 2 GiF
+  </button>
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fabric.js Cropper</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%; background: #222; color: #eee;
+      font-family: Arial, sans-serif; display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-start; padding-top: 70px;
+      overflow-y: auto;
+      padding-bottom: 50px; /* extra space below container */
+    }
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; height: 60px;
+      background: #111; display: flex; justify-content: center; align-items: center;
+      gap: 15px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+    }
+    #header button {
+      background: #4caf50; border: none; border-radius: 5px; color: white;
+      padding: 10px 18px; font-size: 1rem; cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #header button:hover {
+      background: #45a049;
+    }
+    #canvas-container {
+      margin-top: 80px; /* header height + spacing */
+      max-width: 700px;
+      width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      border: 2px solid #4caf50;
+      position: relative;
+
+      /* Scrollbar styles */
+      scrollbar-width: thin; /* Firefox */
+      scrollbar-color: #4caf50 transparent;
+    }
+    #canvas-container::-webkit-scrollbar {
+      width: 12px; /* wider scrollbar */
+    }
+    #canvas-container::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #canvas-container::-webkit-scrollbar-thumb {
+      background-color: #4caf50;
+      border-radius: 6px;
+      border: 3px solid transparent;
+    }
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header">
+    <button id="cropDownload">Crop & Download PNG</button>
+    <button id="downloadPDF">Crop & Download PDF</button>
+    <button id="downloadFullPNG">Download Full PNG</button>
+    <button id="downloadFullPDF">Download Full PDF</button>
+  </div>
+
+  <div id="canvas-container">
+    <canvas id="fabric-canvas"></canvas>
+  </div>
+
+  <script src="libs/fabric.min.js"></script>
+  <script src="libs/jspdf.umd.min.js"></script>
+  <script src="fabric_cropper_ui.js"></script>
+
+</body>
+</html>
